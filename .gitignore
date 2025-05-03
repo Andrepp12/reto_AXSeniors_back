@@ -24,10 +24,9 @@ share/python-wheels/
 *.spec
 
 
-# Configuración específica del entorno local
-.env          # <-- Si usas un archivo .env para variables de entorno locales
-.vscode/      # <-- Configuración de VS Code (puede contener información local)
-*.log         # <-- Archivos de log
+.env         
+.vscode/      
+*.log         
 
 # Pytest
 .pytest_cache/
