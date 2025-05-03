@@ -1,0 +1,41 @@
+# Archivos y carpetas de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/         
+.venv/        
+build/
+develop-eggs/
+dist/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.manifest
+*.spec
+
+
+# Configuración específica del entorno local
+.env          # <-- Si usas un archivo .env para variables de entorno locales
+.vscode/      # <-- Configuración de VS Code (puede contener información local)
+*.log         # <-- Archivos de log
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# MyPy
+.mypy_cache/
+
+# Docker
+*.dockerignore
