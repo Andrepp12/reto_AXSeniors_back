@@ -142,8 +142,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:5173",
-    # Agrega aquí los dominios/puertos de tu frontend cuando lo despliegues
-    # Por ejemplo: "https://tu-frontend-desplegado.vercel.app",
+    os.environ.get('FRONTEND_URL', 'http://localhost'),
 ]
 
 # CORS_ALLOW_ALL_ORIGINS = True # Alternativa: permite cualquier origen (Útil para prototipos, NO para producción)
