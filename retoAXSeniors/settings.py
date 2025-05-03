@@ -27,11 +27,11 @@ load_dotenv(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = [os.environ.get('FRONTEND_URL', 'http://localhost'),
-                 ]
-
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+if not ALLOWED_HOSTS:
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Application definition
 
@@ -139,12 +139,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "http://localhost:5173",
-    os.environ.get('FRONTEND_URL', 'http://localhost'),
-]
+CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', '').split(',')
+if not CORS_ALLOWED_ORIGINS:
+    CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'http://localhost:5173']
 
 # CORS_ALLOW_ALL_ORIGINS = True # Alternativa: permite cualquier origen (Útil para prototipos, NO para producción)
 
